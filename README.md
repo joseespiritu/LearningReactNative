@@ -1,6 +1,16 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+## Start with Expo CLI
+* Inside rn-starter execute:
+  * _npm install_
+  * _npm start_
+* MacOs
+  * If you dont have installed Explo CLI: _sudo npm install --unsafe-perm -g expo-cli_
+  * If not global npm: _export PATH=~/.npm-global/bin:$PATH_ on local variables
+* Windows
+  * If you dont have installed Explo CLI: _npm install expo-cli --global_
+  * If not global npm: _%USERPROFILE%\AppData\Roaming\npm_ on local variables
 
 ## Configuracion e instalacion de dependendencias:
 ### Windows
