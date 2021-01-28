@@ -5,6 +5,10 @@ Respositorio dedicado a aprender React Native
 * [DateTime](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
 * _npm i short id_
 
+
+# Enlable autolink
+* _npx react-native link_
+
 ## Start with Expo CLI
 * Inside rn-starter execute:
   * _npm install_
