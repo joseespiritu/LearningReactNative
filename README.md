@@ -1,9 +1,14 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+# API`s
+* [Criptomonedas](https://min-api.cryptocompare.com/documentation)
+
 # Modals
 * [DateTime](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+* [Picker](https://github.com/react-native-picker/picker)
 * _npm i short id_
+* Hacer peticiones: _npm i --save axios_
 
 
 # Enlable autolink
