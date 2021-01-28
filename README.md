@@ -1,6 +1,9 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+# Modals
+* [DateTime](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+
 ## Start with Expo CLI
 * Inside rn-starter execute:
   * _npm install_
