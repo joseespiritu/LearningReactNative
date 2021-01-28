@@ -3,6 +3,7 @@ Respositorio dedicado a aprender React Native
 
 # Modals
 * [DateTime](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+* _npm i short id_
 
 ## Start with Expo CLI
 * Inside rn-starter execute:
