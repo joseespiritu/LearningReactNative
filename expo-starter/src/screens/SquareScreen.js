@@ -23,7 +23,8 @@ const reducer = (state, action) => {
 
 const SquareScreen = () => {
 
-    const [state, dispatch] = useReducer(reducer, {red:0, green:0, blue:0});
+    const [state, runMyReducer] = useReducer(reducer, {red:0, green:0, blue:0});
+    const { red, green, blue } = state;
 
     /* const [red, setRed] = useState(0);
     const [green, setGreen] = useState(0);
@@ -49,41 +50,26 @@ const SquareScreen = () => {
     } */
 
     return (
-        {/* <View>
-            <ColorCounter
-                onIncrease={() => setColor('red', COLOR_INCREMENT)}
-                onDecrease={() => setColor('red', -1*COLOR_INCREMENT)} 
-                color="Red" 
-            />
-            <ColorCounter 
-                onIncrease={() => setColor('blue', COLOR_INCREMENT)} 
-                onDecrease={() => setColor('blue', -1*COLOR_INCREMENT)} 
-                color="Blue" 
-            />
-            <ColorCounter 
-                onIncrease={() => setColor('green', COLOR_INCREMENT)} 
-                onDecrease={() => setColor('green', -1*COLOR_INCREMENT)} 
-                color="Green" 
-            />
-            <View style={{ height: 150, width: 150, backgroundColor: `rgb(${red},${green},${blue})`}}/>
-        </View> */}
         <View>
             <ColorCounter
-                onIncrease={() => }
-                onDecrease={() => } 
+                onIncrease={() => runMyReducer({ colorToChange: 'red', amount: COLOR_INCREMENT} )}
+                onDecrease={() => runMyReducer({ colorToChange: 'red', amount: -1 * COLOR_INCREMENT})} 
                 color="Red" 
             />
+
             <ColorCounter 
-                onIncrease={() => } 
-                onDecrease={() => } 
-                color="Blue" 
+                onIncrease={() => runMyReducer({ colorToChange: 'blue', amount: COLOR_INCREMENT}) } 
+                onDecrease={() => runMyReducer({ colorToChange: 'blue', amount: -1 * COLOR_INCREMENT}) } 
+                color="Blue"
             />
+
             <ColorCounter 
-                onIncrease={() => } 
-                onDecrease={() => } 
+                onIncrease={() => runMyReducer({ colorToChange: 'green', amount: COLOR_INCREMENT}) } 
+                onDecrease={() => runMyReducer({ colorToChange: 'green', amount: -1 * COLOR_INCREMENT}) } 
                 color="Green" 
             />
-            <View style={{ height: 150, width: 150, backgroundColor: `rgb(${red},${green},${blue})`}}/>
+
+            <View style={{ height: 150, width: 150, backgroundColor: `rgb(${red},${green},${blue})` }}/>
         </View>
     );
 };
