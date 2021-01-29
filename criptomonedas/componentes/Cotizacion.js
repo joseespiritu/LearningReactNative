@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, View, TouchableHighlight, Alert } from "react-native";
+import React from 'react';
+import { Text, StyleSheet, View } from "react-native";
 
 const Cotizacion = ({resultado}) => {
 
@@ -7,7 +7,7 @@ const Cotizacion = ({resultado}) => {
 
     return (
         <View style={styles.resultado}>
-            <Text style={styles.texto}>
+            <Text style={[styles.texto, styles.precio]}>
                 <Text style={styles.span}>{resultado.PRICE}</Text>
             </Text>
             <Text style={styles.texto}>Precio más alto del día: { ' ' }
@@ -28,16 +28,20 @@ const Cotizacion = ({resultado}) => {
 
 const styles = StyleSheet.create({
     resultado: {
-
+        backgroundColor: '#5e49e2',
+        padding: 20
     },
     texto:{
-
+        color: '#FFF',
+        fontFamily: 'Lato-Regular',
+        fontSize: 18,
+        marginBottom: 10
     },
     precio:{
-
+        fontSize: 38
     },
     span: {
-
+        fontFamily: 'Lato-Black'
     }
 });
 
