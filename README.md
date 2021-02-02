@@ -3,12 +3,19 @@ Respositorio dedicado a aprender React Native
 
 # API`s
 * [Criptomonedas](https://min-api.cryptocompare.com/documentation)
+* [Yelp](https://www.yelp.com/fusion)
 
 # Modals
 * [DateTime](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
 * [Picker](https://github.com/react-native-picker/picker)
 * _npm i short id_
 * Hacer peticiones: _npm i --save axios_
+
+# React Navigation
+* React Navigation: _npm install react-navigation_
+* Dependencies: _expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view_
+* Navigation Stack: _npm install react-navigation-stack @react-native-community/masked-view_
+* Start the app and clear cache: _expo r -c_
 
 
 # Enlable autolink
