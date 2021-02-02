@@ -17,6 +17,8 @@ Respositorio dedicado a aprender React Native
 * Navigation Stack: _npm install react-navigation-stack @react-native-community/masked-view_
 * Start the app and clear cache: _expo r -c_
 
+# Assets
+* [Icons on Expo CLI](https://icons.expo.fyi/)
 
 # Enlable autolink
 * _npx react-native link_
