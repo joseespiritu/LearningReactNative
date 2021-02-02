@@ -16,23 +16,21 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderColor: 'black',
         height: 200,
-        alignItems: 'center'
+        alignItems: 'flex-end'
     },
     textOneStyle: {
         borderWidth: 3,
-        borderColor: 'red',
-        flex: 4
+        borderColor: 'red'
     },
     textTwoStyle: {
         borderWidth: 3,
         borderColor: 'red',
-        flex: 4,
-        alignSelf: 'flex-end'
+        position: 'absolute',
+        fontSize: 18
     },
     textThreeStyle: {
         borderWidth: 3,
-        borderColor: 'red',
-        flex: 2
+        borderColor: 'red'
     }
 });
 
