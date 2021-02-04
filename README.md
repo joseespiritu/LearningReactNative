@@ -1,6 +1,9 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+# SERVER
+* [JSON Server](https://www.npmjs.com/package/json-server) : _npm i json-server ngrok_
+
 # API`s
 * [Criptomonedas](https://min-api.cryptocompare.com/documentation)
 * [Yelp](https://www.yelp.com/fusion)
@@ -20,7 +23,7 @@ Respositorio dedicado a aprender React Native
 # Assets
 * [Icons on Expo CLI](https://icons.expo.fyi/)
 
-# Enlable autolink
+# Enable autolink
 * _npx react-native link_
 
 ## Start with Expo CLI
