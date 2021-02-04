@@ -7,6 +7,10 @@ Respositorio dedicado a aprender React Native
   * database: _npm run db_
   * tunnel_server with session: _npm run tunnel_
 
+# Express API
+* Create a new Express API for project track
+  * create json file: _npm init -y_
+  * Install dependencies: _npm install bcrypt express jsonwebtoken mongoose nodemon_
 # API`s
 * [Criptomonedas](https://min-api.cryptocompare.com/documentation)
 * [Yelp](https://www.yelp.com/fusion)
