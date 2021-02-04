@@ -3,6 +3,9 @@ Respositorio dedicado a aprender React Native
 
 # SERVER
 * [JSON Server](https://www.npmjs.com/package/json-server) : _npm i json-server ngrok_
+* To run server on different terminals:
+  * database: _npm run db_
+  * tunnel_server with session: _npm run tunnel_
 
 # API`s
 * [Criptomonedas](https://min-api.cryptocompare.com/documentation)
