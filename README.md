@@ -29,6 +29,7 @@ Respositorio dedicado a aprender React Native
 
 # Assets
 * [Icons on Expo CLI](https://icons.expo.fyi/)
+* [React Native Elements](https://reactnativeelements.com/) to install: _npm install react-native-elements_
 
 # Enable autolink
 * _npx react-native link_
