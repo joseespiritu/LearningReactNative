@@ -14,6 +14,7 @@ Respositorio dedicado a aprender React Native
 # API`s
 * [Criptomonedas](https://min-api.cryptocompare.com/documentation)
 * [Yelp](https://www.yelp.com/fusion)
+* [Clima](https://home.openweathermap.org/api_keys)
 
 # Modals
 * [DateTime](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
@@ -33,6 +34,9 @@ Respositorio dedicado a aprender React Native
 
 # Enable autolink
 * _npx react-native link_
+
+# Configure port on emulator device [Windows]
+* _react-native run-android start --port=8088_
 
 ## Start with Expo CLI
 * Inside rn-starter execute:
