@@ -1,13 +1,15 @@
 import React from 'react';
 import {StyleSheet,ScrollView,View,Text} from 'react-native';
-import Animacion1 from './components/Animacion1';
+//import Animacion1 from './components/Animacion1';
+//import Animacion2 from './components/Animacion2';
+import Animacion3 from './components/Animacion3';
 
 
 const App = () => {
   return (
     <>
       <View style={styles.contenido}>
-        <Animacion1/>
+        <Animacion3/>
       </View>
     </>
   );
