@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text, TextInput, View, StyleSheet, TouchableWithoutFeedback, Animated, Alert } from "react-native";
 import { Picker } from '@react-native-community/picker';
 
-const Formulario = ({ busqueda, guardarBusqueda }) => {
+const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
 
     const { pais, ciudad } = busqueda
 
@@ -13,6 +13,9 @@ const Formulario = ({ busqueda, guardarBusqueda }) => {
             mostrarAlerta();
             return;
         }
+
+        // consultar la API
+        guardarConsultar(true);
     }
 
     const mostrarAlerta = () => {
@@ -48,7 +51,7 @@ const Formulario = ({ busqueda, guardarBusqueda }) => {
                     <TextInput
                         value={ciudad}
                         style={styles.input}
-                        onChangeText={ ciudad => guardarBusqueda({ ...busqeuda, ciudad })}
+                        onChangeText={ ciudad => guardarBusqueda({ ...busqueda, ciudad })}
                         placeholder="Ciudad"
                         placeholderTextColor='#000'
                     />

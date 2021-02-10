@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Formulario from './components/Formulario';
 
@@ -8,11 +8,23 @@ const App = () => {
   const [ busqueda, guardarBusqueda ] = useState({
     ciudad: '',
     pais: ''
-  })
+  });
+
+  const [ consultar, guardarConsultar ] = useState(false);
 
   const ocultarTeclado = () => {
     Keyboard.dismiss();
   }
+
+  const { ciudad, pais } = busqueda;
+
+  useEffect(() => {
+    if(consultar) {
+      const appId = 'f284687897f1ddfeb17e468592eb0107'
+      const url = `api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+      console.log(url);
+    }
+  }, [consultar]);
 
   return (
     <>
@@ -22,6 +34,7 @@ const App = () => {
         <Formulario 
           busqueda={busqueda}
           guardarBusqueda={guardarBusqueda}
+          guardarConsultar={guardarConsultar}
         />
         </View>
       </View>
