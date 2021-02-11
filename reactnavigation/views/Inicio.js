@@ -4,8 +4,13 @@ import { Text, StyleSheet, View, Button } from "react-native";
 
 const Inicio = ({navigation}) => {
 
+    const informacion = {
+        clienteId: 20,
+        totalPagar: 500
+    }
+
     const visitarNosotros = () => {
-        navigation.navigate('Nosotros')
+        navigation.navigate('Nosotros', informacion)
     }
 
     return (

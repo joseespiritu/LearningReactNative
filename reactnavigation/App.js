@@ -21,10 +21,16 @@ const App = () => {
           <Stack.Screen
             name="Inicio"
             component={Inicio}
+            options={{
+              title: "Componente Principal"
+            }}
           />
           <Stack.Screen
             name="Nosotros"
             component={Nosotros}
+            options={({route}) => ({
+              title: route.params.clienteId
+            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
