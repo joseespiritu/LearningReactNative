@@ -28,7 +28,6 @@ const Cita = ({item, eliminarPaciente}) => {
                     <Text style={styles.textoEliminar}> Eliminar &times; </Text>
                 </TouchableHighlight>
             </View>
-            
         </View>
     )
 }
@@ -40,7 +39,8 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderBottomWidth: 1,
         paddingVertical: 20,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        marginBottom: 20
     },
     label: {
         fontWeight: 'bold',

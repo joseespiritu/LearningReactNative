@@ -100,76 +100,78 @@ const Formulario = ({citas, setCitas,  guardarMostrarForm }) => {
     return (
         <>
         <ScrollView style={styles.formulario}>
-            <View>
-                <Text style={styles.label}>Paciente:</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={ texto => guardarPaciente(texto) }
-                />
-            </View>
+            <View style={{paddingBottom: 30}}>
+                <View>
+                    <Text style={styles.label}>Paciente:</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={ texto => guardarPaciente(texto) }
+                    />
+                </View>
 
-            <View>
-                <Text style={styles.label}>Dueño:</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={ texto => guardarPropietario(texto) }
-                />
-            </View>
+                <View>
+                    <Text style={styles.label}>Dueño:</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={ texto => guardarPropietario(texto) }
+                    />
+                </View>
 
-            <View>
-                <Text style={styles.label}>Teléfono Contacto:</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={ texto => guardarTelefono(texto) }
-                    keyboardType='numeric'
-                />
-            </View>
+                <View>
+                    <Text style={styles.label}>Teléfono Contacto:</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={ texto => guardarTelefono(texto) }
+                        keyboardType='numeric'
+                    />
+                </View>
 
-            <View>
-                <Text style={styles.label}>Fecha:</Text>
-                <Button title="Seleccionar Fecha" onPress={showDatePicker} />
-                <DateTimePickerModal
-                    isVisible={isDatePickerVisible}
-                    mode="date"
-                    onConfirm={confirmarFecha}
-                    onCancel={hideDatePicker}
-                    locale='es_ES'
-                    headerTextIOS="Elige la fecha"
-                    cancelTextIOS="Cancelar"
-                    confirmTextIOS="Confirmar"
-                />
-                <Text>{fecha}</Text>
-            </View>
+                <View>
+                    <Text style={styles.label}>Fecha:</Text>
+                    <Button title="Seleccionar Fecha" onPress={showDatePicker} />
+                    <DateTimePickerModal
+                        isVisible={isDatePickerVisible}
+                        mode="date"
+                        onConfirm={confirmarFecha}
+                        onCancel={hideDatePicker}
+                        locale='es_ES'
+                        headerTextIOS="Elige la fecha"
+                        cancelTextIOS="Cancelar"
+                        confirmTextIOS="Confirmar"
+                    />
+                    <Text>{fecha}</Text>
+                </View>
 
-            <View>
-                <Text style={styles.label}>Hora:</Text>
-                <Button title="Seleccionar Hora" onPress={showTimePicker} />
-                <DateTimePickerModal
-                    isVisible={isTimePickerVisible}
-                    mode="time"
-                    onConfirm={confirmarHora}
-                    onCancel={hideTimePicker}
-                    locale='es_ES'
-                    headerTextIOS="Elige una Hora"
-                    cancelTextIOS="Cancelar"
-                    confirmTextIOS="Confirmar"
-                />
-               <Text>{hora}</Text>
-            </View>
+                <View>
+                    <Text style={styles.label}>Hora:</Text>
+                    <Button title="Seleccionar Hora" onPress={showTimePicker} />
+                    <DateTimePickerModal
+                        isVisible={isTimePickerVisible}
+                        mode="time"
+                        onConfirm={confirmarHora}
+                        onCancel={hideTimePicker}
+                        locale='es_ES'
+                        headerTextIOS="Elige una Hora"
+                        cancelTextIOS="Cancelar"
+                        confirmTextIOS="Confirmar"
+                    />
+                <Text>{hora}</Text>
+                </View>
 
-            <View>
-                <Text style={styles.label}>Síntomas:</Text>
-                <TextInput
-                    multiline
-                    style={styles.input}
-                    onChangeText={ texto => guardarSintomas(texto) }
-                />
-            </View>
+                <View>
+                    <Text style={styles.label}>Síntomas:</Text>
+                    <TextInput
+                        multiline
+                        style={styles.input}
+                        onChangeText={ texto => guardarSintomas(texto) }
+                    />
+                </View>
 
-            <View>
-                <TouchableHighlight onPress={ () => crearNuevaCita() } style={styles.btnSubmit}>
-                    <Text style={styles.textoSubmit}>Crear Nueva Cita</Text>
-                </TouchableHighlight>
+                <View>
+                    <TouchableHighlight onPress={ () => crearNuevaCita() } style={styles.btnSubmit}>
+                        <Text style={styles.textoSubmit}>Crear Nueva Cita</Text>
+                    </TouchableHighlight>
+                </View>
             </View>
         </ScrollView>
         </>
@@ -180,6 +182,7 @@ const styles = StyleSheet.create({
     formulario: {
         backgroundColor: '#FFF',
         paddingHorizontal: 20,
+        marginBottom: 40,
         paddingVertical: 10,
         flex: 1
     },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, FlatList, TouchableHighlight, TouchableWithoutFeedback, Keyboard, Platform  } from 'react-native';
+import { Text, StyleSheet, View, FlatList, TouchableHighlight, TouchableWithoutFeedback, Keyboard, Platform, ScrollView} from 'react-native';
 import Cita from './componentes/Cita';
 import Formulario from './componentes/Formulario';
 
@@ -49,12 +49,13 @@ const App = () => {
             ) : (
               <>
                 <Text style={styles.titulo}> {citas.length > 0 ? 'Administra tus citas' : 'No hay citas, agrega una'} </Text>
-                <FlatList 
-                    style={styles.listado}
-                    data={citas}
-                    renderItem={ ({item}) => <Cita item={item} eliminarPaciente={eliminarPaciente} />  }
-                    keyExtractor={ cita => cita.id}
-                />
+                <ScrollView style={styles.listado}>
+                  <FlatList
+                      data={citas}
+                      renderItem={ ({item}) => <Cita item={item} eliminarPaciente={eliminarPaciente} />  }
+                      keyExtractor={ cita => cita.id}
+                  />
+                </ScrollView>
               </>
             ) }
             
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
   },
   listado: {
     flex: 1,
+    marginBottom: 40
   },
   btnMostrarForm: {
       padding: 10,
