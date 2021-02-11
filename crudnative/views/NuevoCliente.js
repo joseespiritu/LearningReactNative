@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Platform } from "react-native";
 import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from "react-native-paper";
 import globalStyles from '../styles/global';
@@ -15,6 +15,17 @@ const NuevoCliente = ({navigation, route}) => {
     const [empresa, guardarEmpresa] = useState('');
     const [alerta, guardarAlerta] = useState(false);
 
+    // Detectar si estamos editando o no
+    useEffect(() => {
+        if(route.params.cliente){
+            const {nombre, telefono, correo, empresa} = route.params.cliente;
+            guardarNombre(nombre);
+            guardarTelefono(telefono);
+            guardarCorreo(correo);
+            guardarEmpresa(empresa);
+        }
+    }, []);
+
     // Almacena el cliente en la BD
     const guardarCliente = async () => {
         // Validar
@@ -27,18 +38,42 @@ const NuevoCliente = ({navigation, route}) => {
         const cliente = {nombre, telefono, empresa, correo};
         console.log(cliente);
 
-        // Guardar el cliente en la API
-        try {
+        // Si estamos editando o creando un nuevo cliente
+        if(route.params.cliente){
+            const {id} = route.params.cliente;
+            cliente.id = id;
             if(Platform.OS === 'ios'){
                 // para IOS
-                await axios.post('http://localhost:3000/clientes', cliente)
+                const url = `http://localhost:3000/clientes/${id}`;
+                try {
+                    await axios.put(url, cliente);
+                } catch (error) {
+                    console.log(error);
+                }
             } else {
                 // para Android
-                await axios.post('http://10.0.2.2:3000/clientes',cliente)
+                const url = `http://10.0.2.2:3000/clientes/${id}`;
+                try {
+                    await axios.put(url, cliente);
+                } catch (error) {
+                    console.log(error);
+                }
             }
-            
-        } catch (error) {
-            console.log(erro);
+
+        } else {
+            // Guardar el cliente en la API
+            try {
+                if(Platform.OS === 'ios'){
+                    // para IOS
+                    await axios.post('http://localhost:3000/clientes', cliente)
+                } else {
+                    // para Android
+                    await axios.post('http://10.0.2.2:3000/clientes',cliente)
+                }
+                
+            } catch (error) {
+                console.log(erro);
+            }
         }
 
         // Redireccionar
