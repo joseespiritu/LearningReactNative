@@ -27,6 +27,7 @@ Respositorio dedicado a aprender React Native
 * Hacer peticiones: _npm i --save axios_
 
 # React Navigation
+* Gist JuanPablo [ReactNavigation](https://gist.github.com/juanpablogdl/86c7db533280f5fd23735794d870a38c)
 * React Navigation: _npm install react-navigation_
 * Dependencies: _expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view_
 * Navigation Stack: _npm install react-navigation-stack @react-native-community/masked-view_
