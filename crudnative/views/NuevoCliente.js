@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from "react-native";
-import { TextInput, Headline, Button } from "react-native-paper";
+import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from "react-native-paper";
 import globalStyles from '../styles/global';
 
 const NuevoCliente = () => {
@@ -10,15 +10,19 @@ const NuevoCliente = () => {
     const [telefono, guardarTelefono] = useState('');
     const [correo, guardarCorreo] = useState('');
     const [empresa, guardarEmpresa] = useState('');
+    const [alerta, guardarAlerta] = useState(false);
 
     // Almacena el cliente en la BD
     const guardarCliente = () => {
         // Validar
         if(nombre === '' || telefono === '' || correo === '' || empresa === ''){
-            console.log('Hay campos vacios');
+            guardarAlerta(true);
             return;
         }
+
         //Generar el cliente
+        const cliente = {nombre, telefono, empresa, correo};
+        console.log(cliente);
 
         // Guardar el cliente en la API
 
@@ -64,6 +68,22 @@ const NuevoCliente = () => {
             >
                 Guardar Cliente
             </Button>
+
+            <Portal>
+                <Dialog
+                    visible={alerta}
+                    onDismiss={() => guardarAlerta(false)}
+                >
+                    <Dialog.Title>Error</Dialog.Title>
+                    <Dialog.Content>
+                        <Paragraph>Todos los campos son obligatorios</Paragraph>
+                    </Dialog.Content>
+                    <Dialog.Actions>
+                        <Button onPress={() => guardarAlerta(false)}>OK</Button>
+                    </Dialog.Actions>
+                </Dialog>
+            </Portal>
+
         </View>
     );
 }

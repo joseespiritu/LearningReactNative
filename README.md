@@ -14,6 +14,7 @@ Respositorio dedicado a aprender React Native
 * To run server on different terminals:
   * database: _npm run db_
   * tunnel_server with session: _npm run tunnel_
+* JSON Server Express: [JSON](https://github.com/typicode/json-server) _npm install -g json-server_
 
 # Express API
 * Create a new Express API for project track
