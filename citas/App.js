@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, StyleSheet, View, FlatList, TouchableHighlight, TouchableWithoutFeedback, Keyboard, Platform, ScrollView} from 'react-native';
 import Cita from './componentes/Cita';
 import Formulario from './componentes/Formulario';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const App = () => {
   // definir el state de citas
   const [citas, setCitas] = useState([]);
   const [mostrarform, guardarMostrarForm] = useState(false);
 
+  useEffect(() => {
+    const obtenerCitasStorage = async () => {
+      try {
+        const citasStorage = await AsyncStorage.getItem('citas');
+        if(citasStorage) {
+          setCitas(JSON.parse(citasStorage));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    obtenerCitasStorage();
+  }, [])
+
   // Elimina los pacientes del state
   const eliminarPaciente = id => {
-
     const citasFiltradas = citas.filter( cita => cita.id !== id );
     setCitas( citasFiltradas );
+    guardarCitasStorage(JSON.stringify(citasFiltradas));
   }
 
   // Muestra u oculta el Formulario
@@ -23,6 +38,15 @@ const App = () => {
   // Ocultar el teclado
   const cerrarTeclado = () => {
     Keyboard.dismiss();
+  }
+
+  // Almacenar las citas en storage
+  const guardarCitasStorage = async (citasJSON) => {
+    try {
+      await AsyncStorage.setItem('citas', citasJSON);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -44,18 +68,18 @@ const App = () => {
                   citas={citas}
                   setCitas={setCitas}
                   guardarMostrarForm={guardarMostrarForm}
+                  guardarCitasStorage={guardarCitasStorage}
                 />
               </>
             ) : (
               <>
-                <Text style={styles.titulo}> {citas.length > 0 ? 'Administra tus citas' : 'No hay citas, agrega una'} </Text>
-                <ScrollView style={styles.listado}>
-                  <FlatList
-                      data={citas}
-                      renderItem={ ({item}) => <Cita item={item} eliminarPaciente={eliminarPaciente} />  }
-                      keyExtractor={ cita => cita.id}
-                  />
-                </ScrollView>
+                  <Text style={styles.titulo}> {citas.length > 0 ? 'Administra tus citas' : 'No hay citas, agrega una'} </Text>
+                      <FlatList
+                          style={styles.listado}
+                          data={citas}
+                          renderItem={ ({item}) => <Cita item={item} eliminarPaciente={eliminarPaciente} />  }
+                          keyExtractor={ cita => cita.id}
+                      />
               </>
             ) }
             
