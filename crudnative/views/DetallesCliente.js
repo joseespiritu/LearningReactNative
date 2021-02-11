@@ -1,11 +1,12 @@
 import React from 'react';
 import { Headline, Text, Subheading, Button } from "react-native-paper";
-import { View, StyleSheet, Alert } from "react-native";
-import globalStyles from '../styles/global'
+import { View, StyleSheet, Alert, Platform } from "react-native";
+import globalStyles from '../styles/global';
+import axios from 'axios';
 
-const DetallesCliente = ({route}) => {
-
-    const { nombre, telefono, correo, empresa } = route.params.item;
+const DetallesCliente = ({navigation, route}) => {
+    const { guardarConsultarAPI } = route.params;
+    const { nombre, telefono, correo, empresa, id } = route.params.item;
 
     const mostrarConfirmacion = () => {
         Alert.alert(
@@ -18,8 +19,30 @@ const DetallesCliente = ({route}) => {
         )
     }
 
-    const eliminarContacto = () => {
-        console.log('Eliminando');
+    const eliminarContacto = async () => {
+        if(Platform.OS === 'ios'){
+            // para IOS
+            const url = `http://localhost:3000/clientes/${id}`;
+            try {
+                await axios.delete(url);
+            } catch (error) {
+                console.log(error);
+            }
+        } else {
+            // para Android
+            const url = `http://10.0.2.2:3000/clientes/${id}`;
+            try {
+                await axios.delete(url);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        
+        // Redireccionar
+        navigation.navigate('Inicio');
+
+        // Volver a consultar
+        guardarConsultarAPI(true);
     }
 
     return (
