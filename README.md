@@ -1,6 +1,10 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+# ASYNC STORAGE
+* [AsyncStorage React Native Community](https://github.com/react-native-async-storage/async-storage)
+* _npm i @react-native-community/async-storage_
+
 # SERVER
 * [JSON Server](https://www.npmjs.com/package/json-server) : _npm i json-server ngrok_
 * To run server on different terminals:
