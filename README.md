@@ -7,7 +7,7 @@ Respositorio dedicado a aprender React Native
 
 # FRAMEWORK UI
 * PAPER: _npm i react-native-paper_
-* Vector Icons: _npm i react-native-vector-icons_
+* Vector Icons: _npm i react-native-vector-icons_ [Link Gist VectorIcons](https://gist.github.com/juanpablogdl/7d02cb231beda08d6a5e53a57efd6f7b)
 
 # SERVER
 * [JSON Server](https://www.npmjs.com/package/json-server) : _npm i json-server ngrok_

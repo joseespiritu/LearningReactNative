@@ -12,6 +12,7 @@ import {
 import Inicio from './views/Inicio';
 import NuevoCliente from './views/NuevoCliente';
 import DetallesCliente from './views/DetallesCliente';
+import BarraSuperior from './components/UI/Barra';
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -38,17 +39,21 @@ const App = () => {
           initialRouteName="Inicio"
           screenOptions={{
             headerStyle: {
-              backgroundColor: theme.colors.primary
+              backgroundColor: theme.colors.primary,  
             },
             headerTintColor: theme.colors.surface,
             headerTitleStyle: {
               fontWeight: 'bold'
-            }
+            },
+            headerTitleAlign: 'center'
           }}
         >
           <Stack.Screen
             name="Inicio"
             component={Inicio}
+            options={({navigation, route}) => ({
+              headerLeft: (props) => <BarraSuperior {...props} navigation={navigation} route={route} />
+            })}
           />
           <Stack.Screen
             name="NuevoCliente"
