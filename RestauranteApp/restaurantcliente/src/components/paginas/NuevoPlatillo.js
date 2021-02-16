@@ -1,13 +1,32 @@
 import React from 'react';
+import { useFormik } from "formik";
 
 const NuevoPlatillo = () => {
+
+    // Validacion y leer los datos del formulario
+    const formik = useFormik({
+        initialValues: {
+            nombre: '',
+            precio: '',
+            categoria: '',
+            imagen: '',
+            descripcion: '',
+        },
+        onSubmit: datos => {
+            console.log(datos)
+        }
+    })
+
+
     return ( 
         <>
             <h1 className="text-3xl font-light mb-4">Agregar Platillo</h1>
 
             <div className="flex justify-center mt-10">
                 <div className="w-full max-w-3xl">
-                    <form>
+                    <form
+                        onSubmit={formik.handleSubmit}
+                    >
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Nombre</label>
                             <input
@@ -15,6 +34,8 @@ const NuevoPlatillo = () => {
                                 id="nombre"
                                 type="text"
                                 placeholder="Nombre Platillo"
+                                value={formik.values.nombre}
+                                onChange={formik.handleChange}
                             />
                         </div>
                         <div className="mb-4">
@@ -23,7 +44,9 @@ const NuevoPlatillo = () => {
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="precio"
                                 type="number"
-                                placeholder="$20"
+                                placeholder="$20"ç
+                                value={formik.values.precio}
+                                onChange={formik.handleChange}
                             />
                         </div>
                         <div className="mb-4">
@@ -32,6 +55,8 @@ const NuevoPlatillo = () => {
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="precio"
                                 name="categoria"
+                                value={formik.values.categoria}
+                                onChange={formik.handleChange}
                             >
                                 <option value="">-- Seleccione --</option>
                                 <option value="desayuno">Desayuno</option>
@@ -48,6 +73,8 @@ const NuevoPlatillo = () => {
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="imagen"
                                 type="file"
+                                value={formik.values.imagen}
+                                onChange={formik.handleChange}
                             />
                         </div>
                         <div className="mb-4">
@@ -57,6 +84,8 @@ const NuevoPlatillo = () => {
                                 id="descripcion"
                                 type="text"
                                 placeholder="Descripción del platillo"
+                                value={formik.values.descripcion}
+                                onChange={formik.handleChange}
                             >
 
                             </textarea>
