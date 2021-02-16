@@ -1,6 +1,10 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+# Restaurante APP
+* Instalación de TailwindCSS: _npm i --save-dev autoprefixer postcss-cli tailwindcss_
+* Inicializando TailWindCSS: _npx tailwind init tailwind.js_
+
 # ASYNC STORAGE
 * [AsyncStorage React Native Community](https://github.com/react-native-async-storage/async-storage)
 * _npm i @react-native-community/async-storage_
