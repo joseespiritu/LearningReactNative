@@ -3,7 +3,7 @@
 ## Dependencias
 * Instalación de formik: _npm i formik_
 * Validación de formularios con yup: _npm i yup_
-* Instalación de Firebase: _npm i firebase_
+* Instalación de Firebase: _npm i firebase@7.18.0_
 
 
 ## Subida de archivos hacia firebase
