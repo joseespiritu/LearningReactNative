@@ -173,6 +173,21 @@ const NuevoPlatillo = () => {
                                 onProgress={handleProgress}
                             />
                         </div>
+
+                        { subiendo && (
+                            <div className="h-12 relative w-full border">
+                                <div className="bg-green-500 absolute left-0 top-0 text-white px-2 text-sm h-12 flex items-center" style={{width: `${progreso}%`}}>
+                                    {progreso} %
+                                </div>
+                            </div>
+                        ) }
+
+                        { urlimagen && (
+                            <p className="bg-green-500 text-white p-3 mr-5 my-5">
+                                La imagen se subió correctamente
+                            </p>
+                        )}
+
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="descripcion">Descripción</label>
                             <textarea
