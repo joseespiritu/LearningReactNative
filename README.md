@@ -10,6 +10,9 @@ Respositorio dedicado a aprender React Native
 * [AsyncStorage React Native Community](https://github.com/react-native-async-storage/async-storage)
 * _npm i @react-native-community/async-storage_
 
+# Mapas
+* _npx expo-cli install react-native-maps_
+
 # FRAMEWORK UI
 * PAPER: _npm i react-native-paper_
 * Vector Icons: _npm i react-native-vector-icons_ [Link Gist VectorIcons](https://gist.github.com/juanpablogdl/7d02cb231beda08d6a5e53a57efd6f7b)
