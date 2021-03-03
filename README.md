@@ -1,6 +1,8 @@
 # LearningReactNative
 Respositorio dedicado a aprender React Native
 
+# --------------JP-------------------------
+
 # Restaurante APP
 * Instalación de TailwindCSS: _npm i --save-dev autoprefixer postcss-cli tailwindcss_
 * Inicializando TailWindCSS: _npx tailwind init tailwind.js_
@@ -9,9 +11,6 @@ Respositorio dedicado a aprender React Native
 # ASYNC STORAGE
 * [AsyncStorage React Native Community](https://github.com/react-native-async-storage/async-storage)
 * _npm i @react-native-community/async-storage_
-
-# Mapas
-* _npx expo-cli install react-native-maps_
 
 # FRAMEWORK UI
 * PAPER: _npm i react-native-paper_
@@ -24,10 +23,6 @@ Respositorio dedicado a aprender React Native
   * tunnel_server with session: _npm run tunnel_
 * JSON Server Express: [JSON](https://github.com/typicode/json-server) _npm install -g json-server_
 
-# Express API
-* Create a new Express API for project track
-  * create json file: _npm init -y_
-  * Install dependencies: _npm install bcrypt express jsonwebtoken mongoose nodemon_
 # API`s
 * [Criptomonedas](https://min-api.cryptocompare.com/documentation)
 * [Yelp](https://www.yelp.com/fusion)
@@ -46,12 +41,23 @@ Respositorio dedicado a aprender React Native
 * Navigation Stack: _npm install react-navigation-stack @react-native-community/masked-view_
 * Start the app and clear cache: _expo r -c_
 
+# Enable autolink
+* _npx react-native link_
+
+# ----------------SG----------------------------
+
+# Mapas
+* _npx expo-cli install react-native-maps_
+* Dependencia de localizacion: _npx expo-cli install expo-location_
+
+# Express API
+* Create a new Express API for project track
+  * create json file: _npm init -y_
+  * Install dependencies: _npm install bcrypt express jsonwebtoken mongoose nodemon_
+
 # Assets
 * [Icons on Expo CLI](https://icons.expo.fyi/)
 * [React Native Elements](https://reactnativeelements.com/) to install: _npm install react-native-elements_
-
-# Enable autolink
-* _npx react-native link_
 
 # Configure port on emulator device [Windows]
 * _react-native run-android start --port=8088_
