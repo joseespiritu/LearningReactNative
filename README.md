@@ -49,6 +49,11 @@ Respositorio dedicado a aprender React Native
 # Mapas
 * _npx expo-cli install react-native-maps_
 * Dependencia de localizacion: _npx expo-cli install expo-location_
+* Resetear permisos de Localizacion:
+  * IOS Simulator => Settings>General>Reset>Reset Location and Privacy
+  * Android Emulator => adb shell pm reset-permissions
+  * IOS Device => Settings > Expo > Toggle Permissions
+  * Android Device => Google Search
 
 # Express API
 * Create a new Express API for project track
